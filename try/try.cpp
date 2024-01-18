@@ -1,20 +1,64 @@
-// try.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <math.h>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int value1, value2, menu_Choice, val_store = 0;
+	int continue_or_exit;
+	do
+	{
+	cout << "========================================="
+		<< "\nWelcome to Operationals!"
+		<< "\nWhat calculation would you like to choose?"
+		<< "\n========================================="
+		<< "\n [1] Addition      |   [2] Subtraction"
+		<< "\n-----------------------------------------"
+		<< "\n[3] Multiplication |    [4] Division    "
+		<< "\n-----------------------------------------"
+		<< "\n  [5] Modulus      |    [6] Power       "
+		<< "\n-----------------------------------------"
+		<< "\n              [0] Exit                   "	
+		<< "\n=========================================";
+	cout << "\nPlease select an Operation: "; cin >> menu_Choice;
+
+	
+	if (menu_Choice == 1 || menu_Choice == 2 || menu_Choice == 3 || menu_Choice == 4 || menu_Choice == 5 || menu_Choice == 6) {
+
+		cout << "\nPlease input 2 value"
+			<< "\nInput value 1: "; cin >> value1;
+		cout << "Input value 2: "; cin >> value2;
+
+		if (menu_Choice == 1)
+		{
+			val_store = value1 + value2;
+		}
+		else if (menu_Choice == 2)
+		{
+			val_store = value1 - value2;
+		}
+		else if (menu_Choice == 3) {
+			val_store = value1 * value2;
+		}
+		else if (menu_Choice == 4) {
+			val_store = value1 / value2;
+		}
+		else if (menu_Choice == 5) {
+			val_store = value1 % value2;
+		}
+		else if (menu_Choice == 6) {
+			val_store = pow(value1, value2);
+		}
+		cout << "\nYour result is: " << val_store;
+	}
+		else if (menu_Choice == 0) {
+		cout << "\nThank you!";
+		exit(0);
+	}
+		else cout << "\nPlease select a valid choice!";
+		cout << "\n\nWould you like to go again?"
+		<< " \n[1] for Yes and [0] for No"
+		<< "\nPlease enter your choice: "; cin >> continue_or_exit;
+		system("cls");
+	} while (continue_or_exit == 1);
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
